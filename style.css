@@ -1,0 +1,281 @@
+/* ===== CSS Variables ===== */
+:root {
+  /* Colors */
+  --primary-color: #1E3A8A;    /* Deep Indigo for navbar & footer */
+  --secondary-color: #2563EB;  /* Bright Blue for links & accents */
+  --accent-color: #F59E0B;     /* Warm Amber for CTAs & highlights */
+  --light-color: #F3F4F6;      /* Off-white background */
+  --dark-color: #111827;       /* Almost-black for headings */
+  --text-color: #374151;       /* Dark Slate for body text */
+  --text-light: #6B7280;       /* Muted Gray for secondary text */
+  --success-color: #10B981;    /* Emerald for success */
+  --error-color: #EF4444;      /* Red-600 for errors */
+
+  /* Effects */
+  --shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1), 0 3px 6px -3px rgba(0, 0, 0, 0.1);
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius: 10px;
+
+  /* Spacing */
+  --section-padding: clamp(3rem, 6vw, 5rem);
+  --container-padding: clamp(1rem, 4vw, 2rem);
+
+  /* Typography */
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --heading-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--text-color);
+  background-color: var(--light-color);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Links & Images */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--accent-color);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--dark-color);
+  font-weight: 700;
+}
+h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+}
+h2 {
+  font-size: var(--heading-size);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+section {
+  padding: var(--section-padding) 0;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(to bottom, var(--primary-color), #1E3A8ACC);
+  color: var(--light-color);
+  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--light-color);
+}
+.logo i {
+  color: var(--accent-color);
+}
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--light-color);
+  transition: var(--transition);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-color);
+  transition: var(--transition);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+/* ===== Hero ===== */
+.hero {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://img.freepik.com/premium-photo/travel-tourism-with-famous-world-landmarks-ai-generative_923607-375.jpg');
+  text-align: center;
+  color: var(--light-color);
+  padding: clamp(5rem,12vw,8rem) 0;
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero-heading {
+  font-size: clamp(3rem,7vw,4.5rem);
+  margin-top: 7px;
+  color: rgb(205, 205, 204);
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.hero-text {
+  font-size: var(--font-size-lg);
+  line-height: 1.9;
+}
+
+/* ===== Seven Wonders ===== */
+.wonders {
+  background: var(--light-color);
+}
+.wonders-heading {
+  margin-bottom: 2rem;
+}
+.wonders-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 0 var(--container-padding);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-color); /* consistent with theme */
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.wonder-card {
+  background: var(--light-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.wonder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+.wonder-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.wonder-title {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+.wonder-description {
+  padding: 0 1rem 1.5rem;
+  color: var(--text-light);
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: linear-gradient(to top, var(--primary-color), #1E3A8ACC);
+  color: var(--light-color);
+  text-align: center;
+  padding: 2rem 0;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+.footer-link {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--light-color);
+  transition: var(--transition);
+}
+.footer-link:hover {
+  color: var(--accent-color);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero-heading {
+    font-size: clamp(2rem,6vw,3rem);
+  }
+  .hero-text {
+    font-size: 1rem;
+  }
+}

@@ -1,26 +1,22 @@
 /* ===== CSS Variables ===== */
 :root {
-  /* Colors */
-  --primary-color: #1E3A8A;    /* Deep Indigo for navbar & footer */
-  --secondary-color: #2563EB;  /* Bright Blue for links & accents */
-  --accent-color: #F59E0B;     /* Warm Amber for CTAs & highlights */
-  --light-color: #F3F4F6;      /* Off-white background */
-  --dark-color: #111827;       /* Almost-black for headings */
-  --text-color: #374151;       /* Dark Slate for body text */
-  --text-light: #6B7280;       /* Muted Gray for secondary text */
-  --success-color: #10B981;    /* Emerald for success */
-  --error-color: #EF4444;      /* Red-600 for errors */
+  --primary-color: #1E3A8A;
+  --secondary-color: #2563EB;
+  --accent-color: #F59E0B;
+  --light-color: #F3F4F6;
+  --dark-color: #111827;
+  --text-color: #374151;
+  --text-light: #6B7280;
+  --success-color: #10B981;
+  --error-color: #EF4444;
 
-  /* Effects */
   --shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.1), 0 3px 6px -3px rgba(0, 0, 0, 0.1);
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   --border-radius: 10px;
 
-  /* Spacing */
   --section-padding: clamp(3rem, 6vw, 5rem);
   --container-padding: clamp(1rem, 4vw, 2rem);
 
-  /* Typography */
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --heading-size: clamp(2rem, 5vw, 2.5rem);
@@ -115,7 +111,6 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 var(--container-padding);
@@ -162,10 +157,11 @@ section {
 
 /* ===== Hero ===== */
 .hero {
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://img.freepik.com/premium-photo/travel-tourism-with-famous-world-landmarks-ai-generative_923607-375.jpg');
+  height: 100vh;
+  background-image: url('https://img.freepik.com/premium-photo/travel-tourism-with-famous-world-landmarks-ai-generative_923607-375.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   text-align: center;
   color: var(--light-color);
   padding: clamp(5rem,12vw,8rem) 0;
@@ -186,7 +182,7 @@ section {
   line-height: 1.9;
 }
 
-/* ===== Seven Wonders ===== */
+/* ===== Seven Wonders Section ===== */
 .wonders {
   background: var(--light-color);
 }
@@ -199,20 +195,6 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding: 0 var(--container-padding);
 }
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--light-color); /* consistent with theme */
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    width: 100%;
-    max-width: 700px;
-    margin: 2rem auto;
-}
-
 .wonder-card {
   background: var(--light-color);
   border-radius: var(--border-radius);
@@ -238,6 +220,76 @@ section {
   color: var(--text-light);
 }
 
+/* ===== Contact Section ===== */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+input:focus,
+textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+.submit-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-button:hover {
+  background-color: #2980b9;
+}
+.success-message {
+  background-color: #e0f7e9;
+  border-left: 4px solid #2ecc71;
+  color: #2c662d;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+.hidden {
+  display: none;
+}
+
 /* ===== Footer ===== */
 .footer {
   background: linear-gradient(to top, var(--primary-color), #1E3A8ACC);
@@ -261,6 +313,16 @@ section {
   color: var(--accent-color);
 }
 
+/* ===== Why Contact Background Section ===== */
+.why-contact {
+  background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: var(--section-padding) 0;
+  color: var(--light-color);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .navbar-container {
@@ -277,5 +339,16 @@ section {
   }
   .hero-text {
     font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+  .section-heading {
+    font-size: 1.5rem;
+  }
+  .submit-button {
+    width: 100%;
   }
 }
